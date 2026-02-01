@@ -2,7 +2,7 @@ import axios from "axios";
 import { LANGUAGES } from "../constants/languages";
 
 // verify this matches your current 'minikube ip'
-const PISTON_API_URL = "http://192.168.49.2:30000/execute"; 
+const PISTON_API_URL = import.meta.env.VITE_PISTON_API_URL + "/execute";; 
 
 export const executeCode = async (languageId, code) => {
   const languageInfo = LANGUAGES.find(lang => lang.id === languageId);

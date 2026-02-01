@@ -28,6 +28,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          VITE_PISTON_API_URL: ${{ secrets.VITE_PISTON_API_URL }}
 
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
